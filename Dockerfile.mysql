@@ -1,0 +1,13 @@
+# Use an official MySQL image as the base
+FROM mysql:8.1.0
+
+# Set the root password for the database
+ENV MYSQL_ROOT_PASSWORD=root_password
+
+# Create a new database and user
+ENV MYSQL_DATABASE=my_database
+ENV MYSQL_USER=my_user
+ENV MYSQL_PASSWORD=my_password
+
+# Expose port 5000 for MySQL
+EXPOSE 5000

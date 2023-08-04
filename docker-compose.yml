@@ -1,0 +1,21 @@
+version: '3'
+services:
+  api:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "8080:8080"
+    depends_on:
+      - db
+    environment:
+      - NODE_ENV=production
+
+  db:
+    build:
+      context: .
+      dockerfile: Dockerfile.mysql
+    ports:
+      - "5000:3306"
+    env_file:
+      - .env
